@@ -1,0 +1,36 @@
+<div class="container">
+	<h2>Products available</h2>
+
+<table border="1" class="table">
+<tr>
+	<th>Name</th>
+	<th>Brand</th>
+	<th>Cost</th>
+	<th>Category</th>
+	<th>Release date</th>
+	<th>Desciption</th>
+	<th>Photo</th>
+	<th>Products page</th>
+	<th>Edit</th>
+	<th>Delete</th>
+</tr>
+
+<% @product.each do |product| %>
+<tr>
+<td><%= product.name %></td>
+<td><%= product.brand %></td>
+<td><%= product.avgcost %></td>
+<td><%= product.category %></td>
+<td><%= product.releasedate %></td>
+<td><%= product.description %></td>
+<td><%= image_tag(product.photo.url, alt: 'Image') if product.photo? %></td>
+<td><%= link_to 'Product page', product_path(product) %> </td>
+<td><%= link_to 'Edit', edit_product_path(product) %></td>
+<td><%= link_to 'Delete', product_path(product),
+				method: :Delete,
+				data: {confirm: "Are you sure want to delete this?"} %></td>
+</tr>
+
+<% end %>
+</table>
+</div>

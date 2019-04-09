@@ -1,0 +1,11 @@
+<div class="container">
+
+<h3>Product details</h3>
+
+<p> Name <%= @product.name %></p>
+<p> Brand <%= @product.brand %></p>
+<p> Cost <%= @product.avgcost %></p>
+<p> Category <%= @product.category %></p>
+<p> Release date <%= @product.releasedate %></p>
+<p> Description <%= @product.description %></p>
+<td><%= image_tag(@product.photo.url, alt: 'Image') if @product.photo? %></td>

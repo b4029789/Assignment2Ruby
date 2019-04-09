@@ -1,0 +1,37 @@
+<div class="Container">
+	<center><h2>Add new product</h2><center>
+
+<%= form_for :product, url: products_path do |f| %>
+
+<div class="form-group"  align="center"> 
+	<%= f.label :name %><br />
+	<%= f.text_field :name, class:'form-control' %><br />
+
+	<%= f.label :brand %><br />
+	<%= f.text_field :brand, class:'form-control' %><br />
+
+	<%= f.label :avgcost %><br />
+	<%= f.text_field :avgcost, class:'form-control' %><br />
+
+	<%= f.label :category %><br />
+	<%= f.text_field :category, class:'form-control' %><br />
+
+	<%= f.label :releasedate %><br />
+	<%= f.date_field :releasedate, class:'form-control' %><br />
+
+	<%= f.label :description %><br />
+	<%= f.text_area :description, class:'form-control' %><br />
+
+	<%= f.label :brand %><br />
+	<%= f.text_field :brand, class:'form-control' %><br />
+
+	<%= f.label :photo %><br />
+	<%= f.file_field :photo, class:'form-control' %><br />
+
+</div>
+
+	<%= f.submit "Submit", class:'btn btn-primary' %>
+		<%=link_to "Cancel", products_path, class:'btn btn-default' %>
+<% end %>
+
+</div>
