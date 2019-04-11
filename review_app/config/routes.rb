@@ -17,5 +17,8 @@ Rails.application.routes.draw do
   get 'static_pages/contact'
   get 'static_pages/product'
   resources :products
+  #get 'profiles/new'
+  resources :profiles
+  get 'profiles/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
