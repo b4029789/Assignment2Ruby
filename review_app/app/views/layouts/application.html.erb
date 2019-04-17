@@ -13,25 +13,21 @@
       <h1 class="my-0 mr-md-auto font-weight-normal">Electronic Review</h1>
       <nav class="my-2 my-md-0 mr-md-3">
         <% if current_user %>
+        <a class="p-2 text-dark" href="#">
+            <%= link_to current_user.userid, profiles_show_path(:id => current_user.id) %>
+          </a>
           <a class="p-2 text-dark" href="#">
             <%= link_to 'Log out', session_path('active'), method: :delete %>
           </a>
-          <a class="p-2 text-dark" href="#">
-            <%= current_user.userid %>
-          </a>
+          <a class ="p-2 text-dark" href="#"><%= link_to 'Products', products_index_path %></a>
           <% else %>
           <a class="p-2 text-dark" href="#">
             <%= link_to 'Log in', new_session_path, class: "active_nav_link" %>
+            <a class ="p-2 text-dark" href="#"><%= link_to 'Create Account', new_user_path %></a>
           </a>
         <% end %>
-        <a class ="p-2 text-dark" href="#"><%= link_to 'Create Account', new_user_path %></a>
-        <!--<a class="btn btn-success" href="static_pages/home">Home</a>-->
         <a class ="p-2 text-dark" href="#"><%= link_to 'Home', root_path %></a>
-        <!--<a class="btn btn-success" href="static_pages/product">Products</a>-->
-        <a class ="p-2 text-dark" href="#"><%= link_to 'Products', products_index_path %></a>
-        <!--<a class="btn btn-success" href="static_pages/about">About</a>-->
         <a class ="p-2 text-dark" href="#"><%= link_to 'About', static_pages_about_path %></a>
-        <!--<a class="btn btn-success" href="static_pages/contact">Contact</a>-->
         <a class ="p-2 text-dark" href="#"><%= link_to 'Contact', static_pages_contact_path %></a>
     </div>
 
