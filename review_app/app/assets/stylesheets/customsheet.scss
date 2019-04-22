@@ -10,3 +10,27 @@ table, th, td {
 form {
   width: 50%;
 }
+
+a:link {
+  color: white;
+}
+
+.products-table img {
+	width: 15rem;
+	height: auto;
+}
+
+.FooterTable a:link, a:visited, a:hover, a:active
+{
+  color: black;   
+}
+
+.notices {
+	text-align:center;
+}
+
+
+.searchtable {
+	border: 0px;
+	color: red;
+}

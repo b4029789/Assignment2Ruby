@@ -20,20 +20,32 @@
             <%= link_to 'Log out', session_path('active'), method: :delete %>
           </a>
           <a class ="p-2 text-dark" href="#"><%= link_to 'Products', products_index_path %></a>
+          <a class ="p-2 text-dark" href="#"><%= link_to 'Review', reviews_path %></a>
           <% else %>
           <a class="p-2 text-dark" href="#">
             <%= link_to 'Log in', new_session_path, class: "active_nav_link" %>
             <a class ="p-2 text-dark" href="#"><%= link_to 'Create Account', new_user_path %></a>
           </a>
         <% end %>
-        <a class ="p-2 text-dark" href="#"><%= link_to 'Home', root_path %></a>
+        <a class ="p-2 text-dark" color="black" href="#"><%= link_to 'Home', root_path %></a>
         <a class ="p-2 text-dark" href="#"><%= link_to 'About', static_pages_about_path %></a>
         <a class ="p-2 text-dark" href="#"><%= link_to 'Contact', static_pages_contact_path %></a>
     </div>
 
-    <% if alert %><%= alert %><% end %>
-    <% if notice %><%= notice %><% end %>
-        
+    <% if current_user %>
+    <div align="center">
+      <%= form_tag search_products_path, method: :get do %>
+      <%= text_field_tag :term, nil, placeholder: 'Search for a product to review', class:'form-control' %>
+      <button type="button" class="btn btn-light"><%= submit_tag "Search", class:'btn btn-default' %></button>
+    <% end %>
+    </div>
+    <% else %>
+    <% end %>
+
+    <div class="notices">
+      <% if alert %><%= alert %><% end %>
+      <% if notice %><%= notice %><% end %>
+    </div>
     <%= yield %>
   </div>
   </body>

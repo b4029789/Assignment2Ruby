@@ -1,7 +1,7 @@
 <div class="container">
 	<h2>Products available</h2>
 
-<table border="1" class="table">
+<table border="1" class="table products-table" class="FooterTable">
 <tr>
 	<th>Name</th>
 	<th>Brand</th>
@@ -17,6 +17,7 @@
 
 <% @product.each do |product| %>
 <tr>
+<br />
 <td><%= product.name %></td>
 <td><%= product.brand %></td>
 <td><%= product.avgcost %></td>
@@ -24,11 +25,11 @@
 <td><%= product.releasedate %></td>
 <td><%= product.description %></td>
 <td><%= image_tag(product.photo.url, alt: 'Image') if product.photo? %></td>
-<td><%= link_to 'Add review', new_review_path %> </td>
-<td><%= link_to 'Edit', edit_product_path(product) %></td>
-<td><%= link_to 'Delete', product_path(product),
+<td><button type="button" class="btn btn-light"><%= link_to 'Product', product_path(product) %></button></td>
+<td><button type="button" class="btn btn-light"><%= link_to 'Edit', edit_product_path(product) %></button></td>
+<td><button type="button" class="btn btn-light"><%= link_to 'Delete', product_path(product),
 				method: :Delete,
-				data: {confirm: "Are you sure want to delete this?"} %></td>
+				data: {confirm: "Are you sure want to delete this?"} %></button></td>
 </tr>
 
 <% end %>

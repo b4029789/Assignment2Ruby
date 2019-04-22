@@ -39,6 +39,15 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
+  def search
+    @product = if params[:term]
+      Product.where('name LIKE ? or brand LIKE ?',"%#{params[:term]}", "%#{params[:term]}")
+    else
+      Product.all
+    end
+  end
+
+
   private
   def product_params
     params.require(:product).permit(:name, :brand, :avgcost, :category, :releasedate, :description, :photo)
