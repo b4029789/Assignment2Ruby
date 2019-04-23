@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contacts
   get 'sessions/index'
   #get 'sessions/new'
   resources :sessions

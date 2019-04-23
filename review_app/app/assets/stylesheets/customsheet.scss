@@ -15,14 +15,14 @@ a:link {
   color: white;
 }
 
-.products-table img {
+.products-table img,{
 	width: 15rem;
 	height: auto;
 }
 
-.FooterTable a:link, a:visited, a:hover, a:active
+a, .FooterTable a:link, a:visited, a:hover, a:active
 {
-  color: black;   
+  color: black !important;   
 }
 
 .notices {
@@ -33,4 +33,9 @@ a:link {
 .searchtable {
 	border: 0px;
 	color: red;
+}
+
+input, select {
+	background-color: #fff !important;
+	color: #000 !important;	
 }
